@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cigu — Current Screen Catalog</title>
+<style>
+  :root{
+    --bg:#f4f1ea; --card:#ffffff; --ink:#1a1c1a; --muted:#6b6f6a;
+    --line:#e4e0d6; --forest:#1f3d2f; --accent:#6b3fa0;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+  header.top{padding:18px 0 8px}
+  .word{font-size:30px;font-weight:800;letter-spacing:-.02em}
+  .word .spark{color:var(--accent)}
+  h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:16px;max-width:60ch;margin:0 0 16px}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--muted)}
+  .pill b{color:var(--forest)}
+  .note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--forest);
+    border-radius:12px;padding:14px 16px;margin:18px 0;font-size:14px;color:#44483f}
+  .note b{color:var(--ink)}
+  /* index */
+  .index{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin:18px 0 30px}
+  .index h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 12px}
+  .idx-cols{columns:2;column-gap:26px}
+  @media(max-width:640px){.idx-cols{columns:1}}
+  .idx-group{break-inside:avoid;margin-bottom:16px}
+  .idx-sec{display:block;font-weight:700;color:var(--forest);text-decoration:none;font-size:14px;margin-bottom:4px}
+  .idx-screen{display:flex;gap:8px;text-decoration:none;color:#3a3d38;font-size:13.5px;padding:2px 0}
+  .idx-screen span{color:var(--muted);font-variant-numeric:tabular-nums;min-width:20px}
+  .idx-screen:hover{color:var(--accent)}
+  /* sections */
+  .sec{margin:36px 0}
+  .sec-head h2{font-size:21px;margin:0 0 4px;letter-spacing:-.01em}
+  .sec-head p{color:var(--muted);margin:0 0 18px;font-size:14.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    display:flex;flex-direction:column;scroll-margin-top:18px}
+  .frame{background:#eceae3;padding:14px 14px 0;display:flex;justify-content:center}
+  .frame img{width:100%;max-width:240px;border-radius:18px 18px 0 0;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);display:block}
+  .meta{padding:14px 16px 18px;position:relative}
+  .num{position:absolute;top:-14px;right:14px;background:var(--forest);color:#fff;
+    font-size:12px;font-weight:700;border-radius:999px;padding:4px 9px;font-variant-numeric:tabular-nums}
+  .meta h3{font-size:16px;margin:2px 0 8px;letter-spacing:-.01em}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+  .tag{font-size:11px;font-weight:600;color:#fff;background:var(--tc);border-radius:999px;padding:3px 8px;opacity:.92}
+  .meta p{font-size:13.5px;color:#4a4e47;margin:0;line-height:1.5}
+  footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  a.back{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="word">cigu<span class="spark">+</span></div>
+    <h1>Current Screen Catalog</h1>
+    <p class="sub">A screen-by-screen record of the Cigu teacher app exactly as it stands today —
+      every screen captured as a real iOS Simulator screenshot, signed-in and signed-out.</p>
+    <div class="pills">
+      <span class="pill"><b>28</b> screens</span>
+      <span class="pill">Real device captures</span>
+      <span class="pill">Light mode (app is light-only today)</span>
+      <span class="pill">Updated 28 June 2026</span>
+    </div>
+    <div class="note">
+      These are <b>real captures of the live app</b>, not redesign mockups. All teacher data is seeded /
+      fictional (“Cikgu Aisyah”). Two states are noted honestly: <b>Peta Minda</b> shows the genuine
+      “update required” gate because this developer build can’t load the interactive map, and
+      <b>Billing return</b> verifies and redirects too fast to freeze. Everything else is the real screen.
+    </div>
+  </header>
+
+  <nav class="index">
+    <h2>All 28 screens</h2>
+    <div class="idx-cols">
+  <div class="idx-group">
+    <a class="idx-sec" href="#onboarding-auth">Onboarding & Sign-in</a>
+    <a class="idx-screen" href="#screen-21"><span>21</span> Onboarding · Welcome</a><a class="idx-screen" href="#screen-22"><span>22</span> Onboarding · Choice</a><a class="idx-screen" href="#screen-27"><span>27</span> Sign-in</a><a class="idx-screen" href="#screen-28"><span>28</span> Magic-link · Error</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#hari-ini">Hari Ini (Today)</a>
+    <a class="idx-screen" href="#screen-1"><span>01</span> Hari Ini · Signed in</a><a class="idx-screen" href="#screen-23"><span>23</span> Hari Ini · Signed out</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#arkib">Arkib (Reuse library)</a>
+    <a class="idx-screen" href="#screen-2"><span>02</span> Arkib · Aktiviti</a><a class="idx-screen" href="#screen-24"><span>24</span> Arkib · Signed out</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#generate">Jana RPH (Generate)</a>
+    <a class="idx-screen" href="#screen-3"><span>03</span> Jana RPH</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#kelas">Kelas (Classes)</a>
+    <a class="idx-screen" href="#screen-4"><span>04</span> Kelas · Signed in</a><a class="idx-screen" href="#screen-25"><span>25</span> Kelas · Signed out</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#profil">Profil (Account hub)</a>
+    <a class="idx-screen" href="#screen-5"><span>05</span> Profil · Hub</a><a class="idx-screen" href="#screen-26"><span>26</span> Profil · Signed out</a><a class="idx-screen" href="#screen-6"><span>06</span> Profil cikgu · Detail</a><a class="idx-screen" href="#screen-7"><span>07</span> Profil cikgu · Edit</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#rph-detail">RPH Detail & Bahan mengajar</a>
+    <a class="idx-screen" href="#screen-8"><span>08</span> RPH Detail</a><a class="idx-screen" href="#screen-18"><span>18</span> Bahan · Kuiz</a><a class="idx-screen" href="#screen-19"><span>19</span> Bahan · Slaid</a><a class="idx-screen" href="#screen-20"><span>20</span> Bahan · Peta Minda</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#detail-exec">Class detail · Fragment · Teaching mode</a>
+    <a class="idx-screen" href="#screen-9"><span>09</span> Class detail</a><a class="idx-screen" href="#screen-10"><span>10</span> Arkib fragment</a><a class="idx-screen" href="#screen-11"><span>11</span> Class mode (teaching)</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#akaun">Akaun & Langganan</a>
+    <a class="idx-screen" href="#screen-15"><span>15</span> Naik taraf (Paywall)</a><a class="idx-screen" href="#screen-12"><span>12</span> Persetujuan (Consent)</a><a class="idx-screen" href="#screen-13"><span>13</span> Eksport data</a><a class="idx-screen" href="#screen-14"><span>14</span> Padam akaun</a><a class="idx-screen" href="#screen-17"><span>17</span> Billing return</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#jadual">Jadual (Timetable)</a>
+    <a class="idx-screen" href="#screen-16"><span>16</span> Susun jadual</a>
+  </div></div>
+  </nav>
+
+  
+  <section class="sec" id="onboarding-auth">
+    <div class="sec-head">
+      <h2>Onboarding & Sign-in</h2>
+      <p>The signed-out front door — first-run intro and the ways a teacher gets into the app.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-21">
+    <div class="frame"><img loading="lazy" src="screens/21-onboarding-welcome.png" alt="Onboarding · Welcome"></div>
+    <div class="meta">
+      <div class="num">21</div>
+      <h3>Onboarding · Welcome</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span><span class="tag" style="--tc:#5b6470">First run</span></div>
+      <p>First screen a brand-new teacher sees. The “cigu” wordmark, a sample RPH card, and the core promise — “RPH siap dalam beberapa minit.” One “Mula” button to start.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-22">
+    <div class="frame"><img loading="lazy" src="screens/22-onboarding-choice.png" alt="Onboarding · Choice"></div>
+    <div class="meta">
+      <div class="num">22</div>
+      <h3>Onboarding · Choice</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span><span class="tag" style="--tc:#5b6470">First run</span></div>
+      <p>Step two: pick how to begin — jump straight in, snap a timetable photo, or sign in. “Cuba dulu tanpa akaun” lets a teacher taste the app with no account.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-27">
+    <div class="frame"><img loading="lazy" src="screens/27-sign-in.png" alt="Sign-in"></div>
+    <div class="meta">
+      <div class="num">27</div>
+      <h3>Sign-in</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>Account screen — continue with Apple or Google, or get a passwordless magic-link by email. “Langkau” / “Cuba dulu tanpa akaun” keep it skippable.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-28">
+    <div class="frame"><img loading="lazy" src="screens/28-magic-error.png" alt="Magic-link · Error"></div>
+    <div class="meta">
+      <div class="num">28</div>
+      <h3>Magic-link · Error</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span><span class="tag" style="--tc:#b3261e">Sad path</span></div>
+      <p>What a teacher sees when a magic-link is invalid or expired — a clear red message and a way back. (The success state redirects straight into the app.)</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="hari-ini">
+    <div class="sec-head">
+      <h2>Hari Ini (Today)</h2>
+      <p>The home tab — today’s teaching agenda built from the timetable.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-1">
+    <div class="frame"><img loading="lazy" src="screens/01-today.png" alt="Hari Ini · Signed in"></div>
+    <div class="meta">
+      <div class="num">01</div>
+      <h3>Hari Ini · Signed in</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The daily home: greeting, an expandable week/month calendar with per-day dots, and the week summary (“21 kelas · 21 perlu RPH”). Shown on a Sunday, so today’s agenda is empty.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-23">
+    <div class="frame"><img loading="lazy" src="screens/23-today-signedout.png" alt="Hari Ini · Signed out"></div>
+    <div class="meta">
+      <div class="num">23</div>
+      <h3>Hari Ini · Signed out</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>The same tab when no one is signed in — a gentle prompt to go to Profil and log in before the schedule can load.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="arkib">
+    <div class="sec-head">
+      <h2>Arkib (Reuse library)</h2>
+      <p>Find and reuse past activities and reflections instead of generating from scratch.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-2">
+    <div class="frame"><img loading="lazy" src="screens/02-arkib.png" alt="Arkib · Aktiviti"></div>
+    <div class="meta">
+      <div class="num">02</div>
+      <h3>Arkib · Aktiviti</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The reuse engine: an “Aktiviti / RPH Saya” toggle, search, scope chips, a recommended activity for the next class, and a recent list — each with a one-tap “Guna”.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-24">
+    <div class="frame"><img loading="lazy" src="screens/24-arkib-signedout.png" alt="Arkib · Signed out"></div>
+    <div class="meta">
+      <div class="num">24</div>
+      <h3>Arkib · Signed out</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>Arkib for a signed-out teacher — the library is gated behind a sign-in notice.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="generate">
+    <div class="sec-head">
+      <h2>Jana RPH (Generate)</h2>
+      <p>The core action — start a new lesson plan. Reached via the centre ＋ button.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-3">
+    <div class="frame"><img loading="lazy" src="screens/03-generate.png" alt="Jana RPH"></div>
+    <div class="meta">
+      <div class="num">03</div>
+      <h3>Jana RPH</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The generate form with smart defaults that name their source (“Dari profil cikgu”), a one-tap “Ulang minggu lepas”, optional topic/class, and a clear “Jana RPH” dock.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="kelas">
+    <div class="sec-head">
+      <h2>Kelas (Classes)</h2>
+      <p>The teacher’s classes, sorted by when they next meet.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-4">
+    <div class="frame"><img loading="lazy" src="screens/04-kelas.png" alt="Kelas · Signed in"></div>
+    <div class="meta">
+      <div class="num">04</div>
+      <h3>Kelas · Signed in</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>A grid of class cards (“3 kelas aktif · sesi 2026”) with subject glyphs and a “Jumpa lagi” footer telling the teacher when each class next meets.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-25">
+    <div class="frame"><img loading="lazy" src="screens/25-kelas-signedout.png" alt="Kelas · Signed out"></div>
+    <div class="meta">
+      <div class="num">25</div>
+      <h3>Kelas · Signed out</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>The Kelas tab with no session — a sign-in prompt instead of the class grid.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="profil">
+    <div class="sec-head">
+      <h2>Profil (Account hub)</h2>
+      <p>Identity, subscription, and the data & privacy controls.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-5">
+    <div class="frame"><img loading="lazy" src="screens/05-profile.png" alt="Profil · Hub"></div>
+    <div class="meta">
+      <div class="num">05</div>
+      <h3>Profil · Hub</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The account hub: identity card with “Log keluar”, the teaching profile drill-in, subscription status (“Pelan Plus · Aktif”), and the Umum + Data & privasi sections.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-26">
+    <div class="frame"><img loading="lazy" src="screens/26-profile-signedout.png" alt="Profil · Signed out"></div>
+    <div class="meta">
+      <div class="num">26</div>
+      <h3>Profil · Signed out</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>The signed-out hub — a single “Log masuk ke Cigu” prompt and button.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-6">
+    <div class="frame"><img loading="lazy" src="screens/06-profile-cikgu.png" alt="Profil cikgu · Detail"></div>
+    <div class="meta">
+      <div class="num">06</div>
+      <h3>Profil cikgu · Detail</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>Read-only teaching identity — name, school, grade, the subjects & years taught, and the Arkib handle. “Ubah” opens the editor.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-7">
+    <div class="frame"><img loading="lazy" src="screens/07-profile-edit.png" alt="Profil cikgu · Edit"></div>
+    <div class="meta">
+      <div class="num">07</div>
+      <h3>Profil cikgu · Edit</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#5b6470">Form</span></div>
+      <p>The edit form for the teaching identity, with a “Batal / Simpan” modal header.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="rph-detail">
+    <div class="sec-head">
+      <h2>RPH Detail & Bahan mengajar</h2>
+      <p>A finished lesson plan and the teaching materials generated from it.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-8">
+    <div class="frame"><img loading="lazy" src="screens/08-rph-detail.png" alt="RPH Detail"></div>
+    <div class="meta">
+      <div class="num">08</div>
+      <h3>RPH Detail</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>A full lesson plan: subject hero, glance tiles (sections done, AI-vs-teacher split, worksheets), a “shaped by past reflections” loop-back, the Bahan mengajar hub, and the 8 RPH sections.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-18">
+    <div class="frame"><img loading="lazy" src="screens/18-quiz.png" alt="Bahan · Kuiz"></div>
+    <div class="meta">
+      <div class="num">18</div>
+      <h3>Bahan · Kuiz</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#6b3fa0">AI output</span></div>
+      <p>An auto-generated quiz for the lesson — question cards with options, the correct answer marked, and DSKP / objective / thinking-level tags per question.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-19">
+    <div class="frame"><img loading="lazy" src="screens/19-slaid.png" alt="Bahan · Slaid"></div>
+    <div class="meta">
+      <div class="num">19</div>
+      <h3>Bahan · Slaid</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#6b3fa0">AI output</span></div>
+      <p>A generated slide deck — a subject-coloured title slide plus content slides with objectives, bullets, and speaker notes (“Nota Penceramah”).</p>
+    </div>
+  </article>
+  <article class="card" id="screen-20">
+    <div class="frame"><img loading="lazy" src="screens/20-peta-minda.png" alt="Bahan · Peta Minda"></div>
+    <div class="meta">
+      <div class="num">20</div>
+      <h3>Bahan · Peta Minda</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#b3261e">OTA gate</span></div>
+      <p>The mind-map screen. On this developer build the interactive map can’t load, so it shows the real “Kemaskini aplikasi diperlukan” update-gate. On a full release binary it renders an interactive d3 map.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="detail-exec">
+    <div class="sec-head">
+      <h2>Class detail · Fragment · Teaching mode</h2>
+      <p>Drill-ins from a class, the reuse library, and the in-lesson teaching view.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-9">
+    <div class="frame"><img loading="lazy" src="screens/09-class-detail.png" alt="Class detail"></div>
+    <div class="meta">
+      <div class="num">09</div>
+      <h3>Class detail</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>Everything for one class — an archive toggle, “Jana RPH baru”, the list of RPHs for the class, and a “what worked” reflections feed.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-10">
+    <div class="frame"><img loading="lazy" src="screens/10-arkib-fragment.png" alt="Arkib fragment"></div>
+    <div class="meta">
+      <div class="num">10</div>
+      <h3>Arkib fragment</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>A single saved activity — DSKP code, subject/level, duration, the activity body, and a “Salin ke draf RPH” action to reuse it.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-11">
+    <div class="frame"><img loading="lazy" src="screens/11-class-mode.png" alt="Class mode (teaching)"></div>
+    <div class="meta">
+      <div class="num">11</div>
+      <h3>Class mode (teaching)</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The in-lesson player — one activity at a time, large text for reading from a distance, a next-up hint, a progress bar, and the screen stays awake.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="akaun">
+    <div class="sec-head">
+      <h2>Akaun & Langganan</h2>
+      <p>Upgrade, consent, data export, and account deletion (the compliance surfaces).</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-15">
+    <div class="frame"><img loading="lazy" src="screens/15-account-upgrade.png" alt="Naik taraf (Paywall)"></div>
+    <div class="meta">
+      <div class="num">15</div>
+      <h3>Naik taraf (Paywall)</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#0a7d4d">Monetisation</span></div>
+      <p>The plan catalogue — Free vs Pro (monthly/yearly), the teacher’s current plan flagged, and clear upgrade buttons.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-12">
+    <div class="frame"><img loading="lazy" src="screens/12-account-consent.png" alt="Persetujuan (Consent)"></div>
+    <div class="meta">
+      <div class="num">12</div>
+      <h3>Persetujuan (Consent)</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#5b6470">PDPA</span></div>
+      <p>The PDPA consent record — current version and accepted date, with a re-consent action when a newer version exists.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-13">
+    <div class="frame"><img loading="lazy" src="screens/13-account-export.png" alt="Eksport data"></div>
+    <div class="meta">
+      <div class="num">13</div>
+      <h3>Eksport data</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#5b6470">PDPA</span></div>
+      <p>Request a full export of the teacher’s data, with a history of past export jobs and their status.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-14">
+    <div class="frame"><img loading="lazy" src="screens/14-account-delete.png" alt="Padam akaun"></div>
+    <div class="meta">
+      <div class="num">14</div>
+      <h3>Padam akaun</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#b3261e">Sad path</span></div>
+      <p>Account deletion with a 7-day grace window and a type-to-confirm email guard against accidental taps.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-17">
+    <div class="frame"><img loading="lazy" src="screens/17-billing-return.png" alt="Billing return"></div>
+    <div class="meta">
+      <div class="num">17</div>
+      <h3>Billing return</h3>
+      <div class="tags"><span class="tag" style="--tc:#9a6a00">Best-effort</span></div>
+      <p>The post-checkout screen verifies the payment and redirects in well under a second, so the brief “Mengesahkan pembayaran…” state is too fast to freeze cleanly — captured here just after it lands back on Profil.</p>
+    </div>
+  </article></div>
+  </section>
+  <section class="sec" id="jadual">
+    <div class="sec-head">
+      <h2>Jadual (Timetable)</h2>
+      <p>Set up the weekly timetable once; it repeats every week.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-16">
+    <div class="frame"><img loading="lazy" src="screens/16-timetable-import.png" alt="Susun jadual"></div>
+    <div class="meta">
+      <div class="num">16</div>
+      <h3>Susun jadual</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The timetable builder entry — snap a photo of the timetable (auto-fill), pick from the gallery, or fill it in by hand.</p>
+    </div>
+  </article></div>
+  </section>
+
+  <footer>
+    Cigu (JASA) mobile app · current-state catalog · 28 screens · updated 28 June 2026.<br>
+    Captured on iOS Simulator (iPhone 17 Pro) from the live development build. Previews are screenshots, not interactive.
+    <br><br><a class="back" href="#">↑ Back to top</a>
+  </footer>
+</div>
+</body>
+</html>

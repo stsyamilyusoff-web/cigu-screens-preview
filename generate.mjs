@@ -1,7 +1,7 @@
 // Generates index.html for the Cigu current-screens catalog from the data below.
 import { writeFileSync } from 'node:fs';
 
-const UPDATED = '28 June 2026';
+const UPDATED = '29 June 2026';
 const TOTAL = 36;
 
 // section → ordered screens. tag types: state | caveat

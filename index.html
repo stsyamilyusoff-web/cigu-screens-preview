@@ -65,7 +65,7 @@
     <p class="sub">A screen-by-screen record of the Cigu teacher app exactly as it stands today —
       every screen captured as a real iOS Simulator screenshot, signed-in and signed-out.</p>
     <div class="pills">
-      <span class="pill"><b>31</b> screens</span>
+      <span class="pill"><b>36</b> screens</span>
       <span class="pill">Real device captures</span>
       <span class="pill">Light mode (app is light-only today)</span>
       <span class="pill">Updated 28 June 2026</span>
@@ -79,7 +79,7 @@
   </header>
 
   <nav class="index">
-    <h2>All 31 screens</h2>
+    <h2>All 36 screens</h2>
     <div class="idx-cols">
   <div class="idx-group">
     <a class="idx-sec" href="#onboarding-auth">Onboarding & Sign-in</a>
@@ -95,7 +95,7 @@
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#generate">Jana RPH (Generate)</a>
-    <a class="idx-screen" href="#screen-3"><span>03</span> Jana RPH</a>
+    <a class="idx-screen" href="#screen-3"><span>03</span> Jana RPH · Confirm card</a><a class="idx-screen" href="#screen-33"><span>33</span> Step 1 · Subject</a><a class="idx-screen" href="#screen-34"><span>34</span> Step 2 · Level</a><a class="idx-screen" href="#screen-35"><span>35</span> Step 3 · Topic</a><a class="idx-screen" href="#screen-36"><span>36</span> Jana RPH · Signed out</a>
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#kelas">Kelas (Classes)</a>
@@ -107,7 +107,7 @@
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#rph-detail">RPH Detail & Bahan mengajar</a>
-    <a class="idx-screen" href="#screen-8"><span>08</span> RPH Detail</a><a class="idx-screen" href="#screen-18"><span>18</span> Bahan · Kuiz</a><a class="idx-screen" href="#screen-19"><span>19</span> Bahan · Slaid</a><a class="idx-screen" href="#screen-20"><span>20</span> Bahan · Peta Minda</a><a class="idx-screen" href="#screen-32"><span>32</span> RPH · Fresh spotlight</a>
+    <a class="idx-screen" href="#screen-8"><span>08</span> RPH Detail</a><a class="idx-screen" href="#screen-18"><span>18</span> Bahan · Kuiz</a><a class="idx-screen" href="#screen-19"><span>19</span> Bahan · Slaid</a><a class="idx-screen" href="#screen-20"><span>20</span> Bahan · Peta Minda</a><a class="idx-screen" href="#screen-32"><span>32</span> RPH · Fresh spotlight</a><a class="idx-screen" href="#screen-37"><span>37</span> RPH Detail · Signed out (401)</a>
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#detail-exec">Class detail · Fragment · Teaching mode</a>
@@ -224,16 +224,52 @@
   <section class="sec" id="generate">
     <div class="sec-head">
       <h2>Jana RPH (Generate)</h2>
-      <p>The core action — start a new lesson plan. Reached via the centre ＋ button.</p>
+      <p>The core action — start a new lesson plan. Reached via the centre ＋ button. Redesigned from a dense form into a one-tap confirm card with an optional 3-step flow behind “Ubah butiran”.</p>
     </div>
     <div class="grid">
   <article class="card" id="screen-3">
-    <div class="frame"><img loading="lazy" src="screens/03-generate.png" alt="Jana RPH"></div>
+    <div class="frame"><img loading="lazy" src="screens/03-generate.png" alt="Jana RPH · Confirm card"></div>
     <div class="meta">
       <div class="num">03</div>
-      <h3>Jana RPH</h3>
+      <h3>Jana RPH · Confirm card</h3>
       <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
-      <p>The generate form with smart defaults that name their source (“Dari profil cikgu”), a one-tap “Ulang minggu lepas”, optional topic/class, and a clear “Jana RPH” dock.</p>
+      <p>The new one-tap default: a single card remembers last week’s lesson (“Diingat dari RPH terakhir” → “Sains · Tahun 4”) so the teacher can just press “Jana RPH”. “Ubah butiran” opens the step-flow to change anything.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-33">
+    <div class="frame"><img loading="lazy" src="screens/33-generate-step1-subject.png" alt="Step 1 · Subject"></div>
+    <div class="meta">
+      <div class="num">33</div>
+      <h3>Step 1 · Subject</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#0a66c2">Step flow</span></div>
+      <p>Tapping “Ubah butiran” opens step 1 of 3 (“Cikgu ajar apa?”). A searchable subject list grouped by cluster (Lazim / Bahasa / Sains & Matematik), with the current subject (Sains) pre-ticked.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-34">
+    <div class="frame"><img loading="lazy" src="screens/34-generate-step2-level.png" alt="Step 2 · Level"></div>
+    <div class="meta">
+      <div class="num">34</div>
+      <h3>Step 2 · Level</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#0a66c2">Step flow</span></div>
+      <p>Step 2 of 3 (“Tahun berapa?”). Only curriculum-valid levels for the chosen subject are shown — split into Sekolah Rendah and Sekolah Menengah — with the current level pre-selected.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-35">
+    <div class="frame"><img loading="lazy" src="screens/35-generate-step3-topic.png" alt="Step 3 · Topic"></div>
+    <div class="meta">
+      <div class="num">35</div>
+      <h3>Step 3 · Topic</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#0a66c2">Step flow</span></div>
+      <p>Step 3 of 3 (“Topik apa?”). Live DSKP topic chips for the chosen subject + level, a “Cadangkan untuk saya” suggestion, optional class and advanced settings, and the final “Jana RPH” button.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-36">
+    <div class="frame"><img loading="lazy" src="screens/36-generate-signedout.png" alt="Jana RPH · Signed out"></div>
+    <div class="meta">
+      <div class="num">36</div>
+      <h3>Jana RPH · Signed out</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span></div>
+      <p>The same tab with no account — no form, just a friendly “Cuba tanpa akaun” invite letting a teacher generate one full RPH before signing up.</p>
     </div>
   </article></div>
   </section>
@@ -354,6 +390,15 @@
       <h3>RPH · Fresh spotlight</h3>
       <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
       <p>The moment a freshly generated RPH lands — a “RPH SIAP · Sambung terus — buat kuiz?” spotlight that nudges the teacher straight into making materials.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-37">
+    <div class="frame"><img loading="lazy" src="screens/37-detail-signedout-401.png" alt="RPH Detail · Signed out (401)"></div>
+    <div class="meta">
+      <div class="num">37</div>
+      <h3>RPH Detail · Signed out (401)</h3>
+      <div class="tags"><span class="tag" style="--tc:#8a6d3b">Signed out</span><span class="tag" style="--tc:#b3261e">Sad path</span></div>
+      <p>Opening an RPH with no session (or after it expires) — a clean Bahasa “Log masuk untuk teruskan” state explaining the session may have ended, with one “Log masuk” button. No raw error text.</p>
     </div>
   </article></div>
   </section>
@@ -486,7 +531,7 @@
   </section>
 
   <footer>
-    Cigu (JASA) mobile app · current-state catalog · 31 screens · updated 28 June 2026.<br>
+    Cigu (JASA) mobile app · current-state catalog · 36 screens · updated 28 June 2026.<br>
     Captured on iOS Simulator (iPhone 17 Pro) from the live development build. Previews are screenshots, not interactive.
     <br><br><a class="back" href="#">↑ Back to top</a>
   </footer>

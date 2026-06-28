@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const UPDATED = '28 June 2026';
-const TOTAL = 31;
+const TOTAL = 36;
 
 // section → ordered screens. tag types: state | caveat
 const SECTIONS = [
@@ -42,10 +42,18 @@ const SECTIONS = [
   },
   {
     id: 'generate', label: 'Jana RPH (Generate)',
-    blurb: 'The core action — start a new lesson plan. Reached via the centre ＋ button.',
+    blurb: 'The core action — start a new lesson plan. Reached via the centre ＋ button. Redesigned from a dense form into a one-tap confirm card with an optional 3-step flow behind “Ubah butiran”.',
     screens: [
-      { n: 3, file: '03-generate.png', title: 'Jana RPH', tags: ['Signed in'],
-        desc: 'The generate form with smart defaults that name their source (“Dari profil cikgu”), a one-tap “Ulang minggu lepas”, optional topic/class, and a clear “Jana RPH” dock.' },
+      { n: 3, file: '03-generate.png', title: 'Jana RPH · Confirm card', tags: ['Signed in'],
+        desc: 'The new one-tap default: a single card remembers last week’s lesson (“Diingat dari RPH terakhir” → “Sains · Tahun 4”) so the teacher can just press “Jana RPH”. “Ubah butiran” opens the step-flow to change anything.' },
+      { n: 33, file: '33-generate-step1-subject.png', title: 'Step 1 · Subject', tags: ['Signed in', 'Step flow'],
+        desc: 'Tapping “Ubah butiran” opens step 1 of 3 (“Cikgu ajar apa?”). A searchable subject list grouped by cluster (Lazim / Bahasa / Sains & Matematik), with the current subject (Sains) pre-ticked.' },
+      { n: 34, file: '34-generate-step2-level.png', title: 'Step 2 · Level', tags: ['Signed in', 'Step flow'],
+        desc: 'Step 2 of 3 (“Tahun berapa?”). Only curriculum-valid levels for the chosen subject are shown — split into Sekolah Rendah and Sekolah Menengah — with the current level pre-selected.' },
+      { n: 35, file: '35-generate-step3-topic.png', title: 'Step 3 · Topic', tags: ['Signed in', 'Step flow'],
+        desc: 'Step 3 of 3 (“Topik apa?”). Live DSKP topic chips for the chosen subject + level, a “Cadangkan untuk saya” suggestion, optional class and advanced settings, and the final “Jana RPH” button.' },
+      { n: 36, file: '36-generate-signedout.png', title: 'Jana RPH · Signed out', tags: ['Signed out'],
+        desc: 'The same tab with no account — no form, just a friendly “Cuba tanpa akaun” invite letting a teacher generate one full RPH before signing up.' },
     ],
   },
   {
@@ -86,6 +94,8 @@ const SECTIONS = [
         desc: 'An auto-generated interactive mind-map (d3 in a WebView) — the topic at the centre, colour-coded branches with sub-nodes, pinch-to-zoom, and a “Peta Pokok / Mind map / Peta Buih” style switcher.' },
       { n: 32, file: '32-fresh-spotlight.png', title: 'RPH · Fresh spotlight', tags: ['Signed in'],
         desc: 'The moment a freshly generated RPH lands — a “RPH SIAP · Sambung terus — buat kuiz?” spotlight that nudges the teacher straight into making materials.' },
+      { n: 37, file: '37-detail-signedout-401.png', title: 'RPH Detail · Signed out (401)', tags: ['Signed out', 'Sad path'],
+        desc: 'Opening an RPH with no session (or after it expires) — a clean Bahasa “Log masuk untuk teruskan” state explaining the session may have ended, with one “Log masuk” button. No raw error text.' },
     ],
   },
   {
@@ -138,7 +148,7 @@ const SECTIONS = [
 
 const TAG_COLORS = {
   'Signed in': '#1f3d2f', 'Signed out': '#8a6d3b', 'First run': '#5b6470',
-  'Form': '#5b6470', 'AI output': '#6b3fa0', 'Monetisation': '#0a7d4d',
+  'Form': '#5b6470', 'AI output': '#6b3fa0', 'Monetisation': '#0a7d4d', 'Step flow': '#0a66c2',
   'PDPA': '#5b6470', 'Sad path': '#b3261e', 'OTA gate': '#b3261e', 'Best-effort': '#9a6a00',
   'Loading': '#0a66c2', 'Error': '#b3261e',
 };

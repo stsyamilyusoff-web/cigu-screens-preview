@@ -2,6 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const UPDATED = '29 June 2026';
+const BUILD = '20260629b'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
 const TOTAL = 36;
 
 // section → ordered screens. tag types: state | caveat
@@ -25,7 +26,7 @@ const SECTIONS = [
     blurb: 'The home tab — today’s teaching agenda built from the timetable.',
     screens: [
       { n: 1, file: '01-today.png', title: 'Hari Ini · Signed in', tags: ['Signed in'],
-        desc: 'The daily home: greeting, an expandable week/month calendar with per-day dots, and the week summary (“21 kelas · 21 perlu RPH”). Shown on a Sunday, so today’s agenda is empty.' },
+        desc: 'The daily home: the date as the large title, an inline week strip with per-day dots, and the “PERLU RPH” agenda — today’s classes that still need an RPH. Native-HIG (system blue).' },
       { n: 23, file: '23-today-signedout.png', title: 'Hari Ini · Signed out', tags: ['Signed out'],
         desc: 'The same tab when no one is signed in — a gentle prompt to go to Profil and log in before the schedule can load.' },
     ],
@@ -157,7 +158,7 @@ const tagHtml = (t) => `<span class="tag" style="--tc:${TAG_COLORS[t] || '#5b647
 
 const cardHtml = (s) => `
   <article class="card" id="screen-${s.n}">
-    <div class="frame"><img loading="lazy" src="screens/${s.file}" alt="${s.title}"></div>
+    <div class="frame"><img loading="lazy" src="screens/${s.file}?v=${BUILD}" alt="${s.title}"></div>
     <div class="meta">
       <div class="num">${String(s.n).padStart(2, '0')}</div>
       <h3>${s.title}</h3>

@@ -65,21 +65,21 @@
     <p class="sub">A screen-by-screen record of the Cigu teacher app exactly as it stands today —
       every screen captured as a real iOS Simulator screenshot, signed-in and signed-out.</p>
     <div class="pills">
-      <span class="pill"><b>28</b> screens</span>
+      <span class="pill"><b>31</b> screens</span>
       <span class="pill">Real device captures</span>
       <span class="pill">Light mode (app is light-only today)</span>
       <span class="pill">Updated 28 June 2026</span>
     </div>
     <div class="note">
       These are <b>real captures of the live app</b>, not redesign mockups. All teacher data is seeded /
-      fictional (“Cikgu Aisyah”). Two states are noted honestly: <b>Peta Minda</b> shows the genuine
-      “update required” gate because this developer build can’t load the interactive map, and
-      <b>Billing return</b> verifies and redirects too fast to freeze. Everything else is the real screen.
+      fictional (“Cikgu Aisyah”). One screen is best-effort: <b>Billing return</b> verifies and redirects
+      too fast to freeze. Brand-new-teacher <b>empty states</b> aren’t shown (the populated states are).
+      Everything else is the real screen — including the interactive Peta Minda map and the loading / error states.
     </div>
   </header>
 
   <nav class="index">
-    <h2>All 28 screens</h2>
+    <h2>All 31 screens</h2>
     <div class="idx-cols">
   <div class="idx-group">
     <a class="idx-sec" href="#onboarding-auth">Onboarding & Sign-in</a>
@@ -107,7 +107,7 @@
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#rph-detail">RPH Detail & Bahan mengajar</a>
-    <a class="idx-screen" href="#screen-8"><span>08</span> RPH Detail</a><a class="idx-screen" href="#screen-18"><span>18</span> Bahan · Kuiz</a><a class="idx-screen" href="#screen-19"><span>19</span> Bahan · Slaid</a><a class="idx-screen" href="#screen-20"><span>20</span> Bahan · Peta Minda</a>
+    <a class="idx-screen" href="#screen-8"><span>08</span> RPH Detail</a><a class="idx-screen" href="#screen-18"><span>18</span> Bahan · Kuiz</a><a class="idx-screen" href="#screen-19"><span>19</span> Bahan · Slaid</a><a class="idx-screen" href="#screen-20"><span>20</span> Bahan · Peta Minda</a><a class="idx-screen" href="#screen-32"><span>32</span> RPH · Fresh spotlight</a>
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#detail-exec">Class detail · Fragment · Teaching mode</a>
@@ -116,6 +116,10 @@
   <div class="idx-group">
     <a class="idx-sec" href="#akaun">Akaun & Langganan</a>
     <a class="idx-screen" href="#screen-15"><span>15</span> Naik taraf (Paywall)</a><a class="idx-screen" href="#screen-12"><span>12</span> Persetujuan (Consent)</a><a class="idx-screen" href="#screen-13"><span>13</span> Eksport data</a><a class="idx-screen" href="#screen-14"><span>14</span> Padam akaun</a><a class="idx-screen" href="#screen-17"><span>17</span> Billing return</a>
+  </div>
+  <div class="idx-group">
+    <a class="idx-sec" href="#states">States — loading & error</a>
+    <a class="idx-screen" href="#screen-29"><span>29</span> Generating (loading)</a><a class="idx-screen" href="#screen-30"><span>30</span> Load error</a>
   </div>
   <div class="idx-group">
     <a class="idx-sec" href="#jadual">Jadual (Timetable)</a>
@@ -339,8 +343,17 @@
     <div class="meta">
       <div class="num">20</div>
       <h3>Bahan · Peta Minda</h3>
-      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#b3261e">OTA gate</span></div>
-      <p>The mind-map screen. On this developer build the interactive map can’t load, so it shows the real “Kemaskini aplikasi diperlukan” update-gate. On a full release binary it renders an interactive d3 map.</p>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#6b3fa0">AI output</span></div>
+      <p>An auto-generated interactive mind-map (d3 in a WebView) — the topic at the centre, colour-coded branches with sub-nodes, pinch-to-zoom, and a “Peta Pokok / Mind map / Peta Buih” style switcher.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-32">
+    <div class="frame"><img loading="lazy" src="screens/32-fresh-spotlight.png" alt="RPH · Fresh spotlight"></div>
+    <div class="meta">
+      <div class="num">32</div>
+      <h3>RPH · Fresh spotlight</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span></div>
+      <p>The moment a freshly generated RPH lands — a “RPH SIAP · Sambung terus — buat kuiz?” spotlight that nudges the teacher straight into making materials.</p>
     </div>
   </article></div>
   </section>
@@ -430,6 +443,31 @@
     </div>
   </article></div>
   </section>
+  <section class="sec" id="states">
+    <div class="sec-head">
+      <h2>States — loading & error</h2>
+      <p>Representative non-happy states, captured live.</p>
+    </div>
+    <div class="grid">
+  <article class="card" id="screen-29">
+    <div class="frame"><img loading="lazy" src="screens/29-generate-loading.png" alt="Generating (loading)"></div>
+    <div class="meta">
+      <div class="num">29</div>
+      <h3>Generating (loading)</h3>
+      <div class="tags"><span class="tag" style="--tc:#1f3d2f">Signed in</span><span class="tag" style="--tc:#0a66c2">Loading</span></div>
+      <p>Right after “Jana RPH” — the new plan builds with content-shaped skeletons and a “Menyusun RPH…” status while each section generates.</p>
+    </div>
+  </article>
+  <article class="card" id="screen-30">
+    <div class="frame"><img loading="lazy" src="screens/30-detail-error.png" alt="Load error"></div>
+    <div class="meta">
+      <div class="num">30</div>
+      <h3>Load error</h3>
+      <div class="tags"><span class="tag" style="--tc:#b3261e">Sad path</span><span class="tag" style="--tc:#b3261e">Error</span></div>
+      <p>When a screen can’t load its data (here, an expired session) — a clear red “Tidak dapat dimuatkan” banner with a “Cuba lagi” retry.</p>
+    </div>
+  </article></div>
+  </section>
   <section class="sec" id="jadual">
     <div class="sec-head">
       <h2>Jadual (Timetable)</h2>
@@ -448,7 +486,7 @@
   </section>
 
   <footer>
-    Cigu (JASA) mobile app · current-state catalog · 28 screens · updated 28 June 2026.<br>
+    Cigu (JASA) mobile app · current-state catalog · 31 screens · updated 28 June 2026.<br>
     Captured on iOS Simulator (iPhone 17 Pro) from the live development build. Previews are screenshots, not interactive.
     <br><br><a class="back" href="#">↑ Back to top</a>
   </footer>

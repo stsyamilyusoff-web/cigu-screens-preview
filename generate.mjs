@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const UPDATED = '28 June 2026';
-const TOTAL = 28;
+const TOTAL = 31;
 
 // section → ordered screens. tag types: state | caveat
 const SECTIONS = [
@@ -82,8 +82,10 @@ const SECTIONS = [
         desc: 'An auto-generated quiz for the lesson — question cards with options, the correct answer marked, and DSKP / objective / thinking-level tags per question.' },
       { n: 19, file: '19-slaid.png', title: 'Bahan · Slaid', tags: ['Signed in', 'AI output'],
         desc: 'A generated slide deck — a subject-coloured title slide plus content slides with objectives, bullets, and speaker notes (“Nota Penceramah”).' },
-      { n: 20, file: '20-peta-minda.png', title: 'Bahan · Peta Minda', tags: ['Signed in', 'OTA gate'],
-        desc: 'The mind-map screen. On this developer build the interactive map can’t load, so it shows the real “Kemaskini aplikasi diperlukan” update-gate. On a full release binary it renders an interactive d3 map.' },
+      { n: 20, file: '20-peta-minda.png', title: 'Bahan · Peta Minda', tags: ['Signed in', 'AI output'],
+        desc: 'An auto-generated interactive mind-map (d3 in a WebView) — the topic at the centre, colour-coded branches with sub-nodes, pinch-to-zoom, and a “Peta Pokok / Mind map / Peta Buih” style switcher.' },
+      { n: 32, file: '32-fresh-spotlight.png', title: 'RPH · Fresh spotlight', tags: ['Signed in'],
+        desc: 'The moment a freshly generated RPH lands — a “RPH SIAP · Sambung terus — buat kuiz?” spotlight that nudges the teacher straight into making materials.' },
     ],
   },
   {
@@ -115,6 +117,16 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'states', label: 'States — loading & error',
+    blurb: 'Representative non-happy states, captured live.',
+    screens: [
+      { n: 29, file: '29-generate-loading.png', title: 'Generating (loading)', tags: ['Signed in', 'Loading'],
+        desc: 'Right after “Jana RPH” — the new plan builds with content-shaped skeletons and a “Menyusun RPH…” status while each section generates.' },
+      { n: 30, file: '30-detail-error.png', title: 'Load error', tags: ['Sad path', 'Error'],
+        desc: 'When a screen can’t load its data (here, an expired session) — a clear red “Tidak dapat dimuatkan” banner with a “Cuba lagi” retry.' },
+    ],
+  },
+  {
     id: 'jadual', label: 'Jadual (Timetable)',
     blurb: 'Set up the weekly timetable once; it repeats every week.',
     screens: [
@@ -128,6 +140,7 @@ const TAG_COLORS = {
   'Signed in': '#1f3d2f', 'Signed out': '#8a6d3b', 'First run': '#5b6470',
   'Form': '#5b6470', 'AI output': '#6b3fa0', 'Monetisation': '#0a7d4d',
   'PDPA': '#5b6470', 'Sad path': '#b3261e', 'OTA gate': '#b3261e', 'Best-effort': '#9a6a00',
+  'Loading': '#0a66c2', 'Error': '#b3261e',
 };
 
 const tagHtml = (t) => `<span class="tag" style="--tc:${TAG_COLORS[t] || '#5b6470'}">${t}</span>`;
@@ -232,9 +245,9 @@ const html = `<!doctype html>
     </div>
     <div class="note">
       These are <b>real captures of the live app</b>, not redesign mockups. All teacher data is seeded /
-      fictional (“Cikgu Aisyah”). Two states are noted honestly: <b>Peta Minda</b> shows the genuine
-      “update required” gate because this developer build can’t load the interactive map, and
-      <b>Billing return</b> verifies and redirects too fast to freeze. Everything else is the real screen.
+      fictional (“Cikgu Aisyah”). One screen is best-effort: <b>Billing return</b> verifies and redirects
+      too fast to freeze. Brand-new-teacher <b>empty states</b> aren’t shown (the populated states are).
+      Everything else is the real screen — including the interactive Peta Minda map and the loading / error states.
     </div>
   </header>
 

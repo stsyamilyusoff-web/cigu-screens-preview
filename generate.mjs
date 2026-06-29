@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const UPDATED = '29 June 2026';
-const BUILD = '20260629b'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
+const BUILD = '20260629c'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
 const TOTAL = 36;
 
 // section → ordered screens. tag types: state | caveat

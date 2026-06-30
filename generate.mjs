@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs';
 
 const UPDATED = '30 June 2026';
-const BUILD = '20260630a'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
+const BUILD = '20260630b'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
 const TOTAL = 35;
 
 // section → ordered screens. tag types: state | caveat
@@ -12,7 +12,7 @@ const SECTIONS = [
     blurb: 'The signed-out front door — first-run intro and the ways a teacher gets into the app.',
     screens: [
       { n: 21, file: '21-onboarding-welcome.png', title: 'Onboarding · Welcome', tags: ['Signed out', 'First run'],
-        desc: 'The reworked first-run brand moment (onboarding collapsed to this one screen, then straight into a free taste). The “cigu” wordmark, the credit “OLEH LEARNEST LAB X SIFUTUTOR”, the promise “Masa cikgu, untuk murid.”, a sample “RPH SIAP” card (Haiwan dan Habitat), and trust chips (Bukan ganti · Patuh PDPA · Buatan Malaysia). One “Cuba, jana RPH pertama” button, with “Sudah ada akaun? Log masuk” below.' },
+        desc: 'The reworked first-run brand moment (onboarding collapsed to this one screen, then straight into a free taste). The “cigu” wordmark, the credit “OLEH LEARNEST LAB X SIFUTUTOR”, the promise “Masa cikgu, untuk murid.”, a sample “RPH SIAP” card (Haiwan dan Habitat), and trust chips (Patuh PDPA · Buatan Malaysia). One “Cuba, jana RPH pertama” button, with “Sudah ada akaun? Log masuk” below.' },
       { n: 27, file: '27-sign-in.png', title: 'Sign-in', tags: ['Signed out'],
         desc: 'Account screen — continue with Apple or Google, or get a passwordless magic-link by email. “Langkau” / “Cuba dulu tanpa akaun” keep it skippable.' },
       { n: 28, file: '28-magic-error.png', title: 'Magic-link · Error', tags: ['Signed out', 'Sad path'],
@@ -46,7 +46,7 @@ const SECTIONS = [
       { n: 3, file: '03-generate.png', title: 'Jana RPH · Confirm card', tags: ['Signed in'],
         desc: 'The one-tap default: a single card remembers the teacher’s subject and level (“Diingat dari profil cikgu” → “Sains · Tahun 4”) so they can just press “Jana RPH”, now a live, tappable button. “Ubah butiran” opens the step-flow to change anything.' },
       { n: 33, file: '33-generate-step1-subject.png', title: 'Step 1 · Subject', tags: ['Signed in', 'Step flow'],
-        desc: 'Tapping “Ubah butiran” opens the reworked step flow, restyled into the calm “Class Mode” player: a thin top progress bar (“Langkah 1/3”), one big question (“Cikgu ajar apa?”), and a searchable subject list grouped by cluster (Lazim · Bahasa), with the current subject (Sains) pre-ticked. Picking a subject auto-advances to the next step.' },
+        desc: 'Tapping “Ubah butiran” opens the reworked step flow, now the calm full-screen “Class Mode” player (no tab bar): a thin top progress bar (“Langkah 1/3”), one big question (“Cikgu ajar apa?”), and a searchable subject list grouped by cluster (Lazim · Bahasa), with the current subject (Sains) pre-ticked. Picking a subject auto-advances to the next step.' },
       { n: 34, file: '34-generate-step2-level.png', title: 'Step 2 · Level', tags: ['Signed in', 'Step flow', 'Pre-reskin'],
         desc: 'Step 2 of 3 (“Tahun berapa?”): only curriculum-valid levels for the chosen subject, split into Sekolah Rendah and Sekolah Menengah, with the current level pre-selected. (Screenshot shows the previous design; the live step now uses the same Step 1 player layout. Capture refresh pending.)' },
       { n: 35, file: '35-generate-step3-topic.png', title: 'Step 3 · Topic', tags: ['Signed in', 'Step flow', 'Pre-reskin'],

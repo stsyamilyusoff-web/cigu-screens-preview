@@ -1,9 +1,9 @@
 // Generates index.html for the Cigu current-screens catalog from the data below.
 import { writeFileSync } from 'node:fs';
 
-const UPDATED = '29 June 2026';
-const BUILD = '20260629c'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
-const TOTAL = 36;
+const UPDATED = '30 June 2026';
+const BUILD = '20260630a'; // cache-bust token — bump on every screenshot refresh so browsers re-fetch
+const TOTAL = 35;
 
 // section → ordered screens. tag types: state | caveat
 const SECTIONS = [
@@ -12,9 +12,7 @@ const SECTIONS = [
     blurb: 'The signed-out front door — first-run intro and the ways a teacher gets into the app.',
     screens: [
       { n: 21, file: '21-onboarding-welcome.png', title: 'Onboarding · Welcome', tags: ['Signed out', 'First run'],
-        desc: 'First screen a brand-new teacher sees. The “cigu” wordmark, a sample RPH card, and the core promise — “RPH siap dalam beberapa minit.” One “Mula” button to start.' },
-      { n: 22, file: '22-onboarding-choice.png', title: 'Onboarding · Choice', tags: ['Signed out', 'First run'],
-        desc: 'Step two: pick how to begin — jump straight in, snap a timetable photo, or sign in. “Cuba dulu tanpa akaun” lets a teacher taste the app with no account.' },
+        desc: 'The reworked first-run brand moment (onboarding collapsed to this one screen, then straight into a free taste). The “cigu” wordmark, the credit “OLEH LEARNEST LAB X SIFUTUTOR”, the promise “Masa cikgu, untuk murid.”, a sample “RPH SIAP” card (Haiwan dan Habitat), and trust chips (Bukan ganti · Patuh PDPA · Buatan Malaysia). One “Cuba, jana RPH pertama” button, with “Sudah ada akaun? Log masuk” below.' },
       { n: 27, file: '27-sign-in.png', title: 'Sign-in', tags: ['Signed out'],
         desc: 'Account screen — continue with Apple or Google, or get a passwordless magic-link by email. “Langkau” / “Cuba dulu tanpa akaun” keep it skippable.' },
       { n: 28, file: '28-magic-error.png', title: 'Magic-link · Error', tags: ['Signed out', 'Sad path'],
@@ -46,13 +44,13 @@ const SECTIONS = [
     blurb: 'The core action — start a new lesson plan. Reached via the centre ＋ button. Redesigned from a dense form into a one-tap confirm card with an optional 3-step flow behind “Ubah butiran”.',
     screens: [
       { n: 3, file: '03-generate.png', title: 'Jana RPH · Confirm card', tags: ['Signed in'],
-        desc: 'The new one-tap default: a single card remembers last week’s lesson (“Diingat dari RPH terakhir” → “Sains · Tahun 4”) so the teacher can just press “Jana RPH”. “Ubah butiran” opens the step-flow to change anything.' },
+        desc: 'The one-tap default: a single card remembers the teacher’s subject and level (“Diingat dari profil cikgu” → “Sains · Tahun 4”) so they can just press “Jana RPH”, now a live, tappable button. “Ubah butiran” opens the step-flow to change anything.' },
       { n: 33, file: '33-generate-step1-subject.png', title: 'Step 1 · Subject', tags: ['Signed in', 'Step flow'],
-        desc: 'Tapping “Ubah butiran” opens step 1 of 3 (“Cikgu ajar apa?”). A searchable subject list grouped by cluster (Lazim / Bahasa / Sains & Matematik), with the current subject (Sains) pre-ticked.' },
-      { n: 34, file: '34-generate-step2-level.png', title: 'Step 2 · Level', tags: ['Signed in', 'Step flow'],
-        desc: 'Step 2 of 3 (“Tahun berapa?”). Only curriculum-valid levels for the chosen subject are shown — split into Sekolah Rendah and Sekolah Menengah — with the current level pre-selected.' },
-      { n: 35, file: '35-generate-step3-topic.png', title: 'Step 3 · Topic', tags: ['Signed in', 'Step flow'],
-        desc: 'Step 3 of 3 (“Topik apa?”). Live DSKP topic chips for the chosen subject + level, a “Cadangkan untuk saya” suggestion, optional class and advanced settings, and the final “Jana RPH” button.' },
+        desc: 'Tapping “Ubah butiran” opens the reworked step flow, restyled into the calm “Class Mode” player: a thin top progress bar (“Langkah 1/3”), one big question (“Cikgu ajar apa?”), and a searchable subject list grouped by cluster (Lazim · Bahasa), with the current subject (Sains) pre-ticked. Picking a subject auto-advances to the next step.' },
+      { n: 34, file: '34-generate-step2-level.png', title: 'Step 2 · Level', tags: ['Signed in', 'Step flow', 'Pre-reskin'],
+        desc: 'Step 2 of 3 (“Tahun berapa?”): only curriculum-valid levels for the chosen subject, split into Sekolah Rendah and Sekolah Menengah, with the current level pre-selected. (Screenshot shows the previous design; the live step now uses the same Step 1 player layout. Capture refresh pending.)' },
+      { n: 35, file: '35-generate-step3-topic.png', title: 'Step 3 · Topic', tags: ['Signed in', 'Step flow', 'Pre-reskin'],
+        desc: 'Step 3 of 3 (“Topik apa?”): live DSKP topic chips for the chosen subject and level, a “Cadangkan untuk saya” suggestion, optional class and advanced settings, and the final “Jana RPH” button. (Screenshot shows the previous design; the live step now uses the same Step 1 player layout. Capture refresh pending.)' },
       { n: 36, file: '36-generate-signedout.png', title: 'Jana RPH · Signed out', tags: ['Signed out'],
         desc: 'The same tab with no account — no form, just a friendly “Cuba tanpa akaun” invite letting a teacher generate one full RPH before signing up.' },
     ],
@@ -104,7 +102,7 @@ const SECTIONS = [
     blurb: 'Drill-ins from a class, the reuse library, and the in-lesson teaching view.',
     screens: [
       { n: 9, file: '09-class-detail.png', title: 'Class detail', tags: ['Signed in'],
-        desc: 'Everything for one class — an archive toggle, “Jana RPH baru”, the list of RPHs for the class, and a “what worked” reflections feed.' },
+        desc: 'Everything for one class, decluttered: the class name as the large title, “Jana RPH baru untuk [kelas]”, the list of RPHs for the class (here the clean empty “Belum ada RPH untuk kelas ini.” state, as this class has no plans yet), a “what worked” reflections feed when present, and the archive action demoted to a quiet “Arkibkan kelas” row at the bottom.' },
       { n: 10, file: '10-arkib-fragment.png', title: 'Arkib fragment', tags: ['Signed in'],
         desc: 'A single saved activity — DSKP code, subject/level, duration, the activity body, and a “Salin ke draf RPH” action to reuse it.' },
       { n: 11, file: '11-class-mode.png', title: 'Class mode (teaching)', tags: ['Signed in'],
@@ -151,7 +149,7 @@ const TAG_COLORS = {
   'Signed in': '#1f3d2f', 'Signed out': '#8a6d3b', 'First run': '#5b6470',
   'Form': '#5b6470', 'AI output': '#6b3fa0', 'Monetisation': '#0a7d4d', 'Step flow': '#0a66c2',
   'PDPA': '#5b6470', 'Sad path': '#b3261e', 'OTA gate': '#b3261e', 'Best-effort': '#9a6a00',
-  'Loading': '#0a66c2', 'Error': '#b3261e',
+  'Loading': '#0a66c2', 'Error': '#b3261e', 'Pre-reskin': '#9a6a00',
 };
 
 const tagHtml = (t) => `<span class="tag" style="--tc:${TAG_COLORS[t] || '#5b6470'}">${t}</span>`;

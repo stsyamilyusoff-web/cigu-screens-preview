@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cigu — Welcome, crafted</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --violet:#7C3AED; --violet-deep:#5B21B6; --violet-light:#EDE9FE;
+    --chalk:#F8FAFC; --slate:#64748B; --slate-light:#94A3B8; --line:#E2E8F0;
+    --paper:#FFFFFF; --green:#16A34A;
+    --sora:'Sora',system-ui,sans-serif; --inter:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:#0b1220; font-family:var(--inter); color:var(--ink);
+    padding:32px 16px 80px; -webkit-font-smoothing:antialiased}
+  .lead{max-width:760px; margin:0 auto 28px; color:#cbd5e1; font-size:14.5px; line-height:1.6; text-align:center}
+  .lead b{color:#fff; font-weight:600}
+  .stage{display:flex; flex-wrap:wrap; gap:28px; justify-content:center; align-items:flex-start}
+
+  /* device */
+  .phone{width:390px; max-width:100%; background:var(--chalk); border-radius:44px;
+    border:10px solid #0f172a; box-shadow:0 30px 70px rgba(0,0,0,.5); overflow:hidden; position:relative}
+  .notch{height:50px; display:flex; align-items:center; justify-content:space-between; padding:0 26px 0 30px}
+  .notch .t{font-family:var(--sora); font-weight:600; font-size:15px; color:var(--ink)}
+  .notch .r{display:flex; gap:6px; align-items:center; color:var(--ink); font-size:13px; opacity:.85}
+  .screen{padding:14px 24px 30px}
+
+  /* 1 — brand lockup */
+  .brand{margin-top:24px}
+  .brand svg{height:30px; width:auto; display:block}
+  .byline{margin-top:11px; font-size:10.5px; font-weight:600; letter-spacing:1.5px;
+    color:var(--slate-light); text-transform:uppercase}
+
+  /* 2 — hero */
+  .hero{margin-top:34px}
+  .hero h1{font-family:var(--sora); font-weight:800; font-size:35px; line-height:1.06;
+    letter-spacing:-1.1px; color:var(--ink)}
+  .hero h1 .pay{color:var(--violet)}
+  .hero p{margin-top:14px; font-size:15.5px; line-height:1.5; color:var(--slate); max-width:262px}
+
+  /* 3 — proof */
+  .proof{margin-top:32px}
+  .eyebrow{font-size:10.5px; font-weight:600; letter-spacing:1.5px; color:var(--slate-light);
+    text-transform:uppercase; margin-bottom:11px}
+  .card{position:relative; background:var(--paper); border:1px solid var(--line);
+    border-radius:18px; padding:17px 18px; overflow:hidden}
+  .card .flask{position:absolute; right:-14px; bottom:-22px; font-size:128px; color:var(--violet);
+    opacity:.05; line-height:1}
+  .card .siap{display:flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700;
+    letter-spacing:.6px; color:var(--green); text-transform:uppercase}
+  .card .siap .dot{width:6px; height:6px; border-radius:50%; background:var(--green)}
+  .card h3{font-family:var(--sora); font-weight:700; font-size:18px; color:var(--ink);
+    margin:7px 0 3px; position:relative}
+  .card .meta{font-size:12.5px; color:var(--slate); position:relative}
+  .card .chip{display:inline-flex; align-items:center; gap:5px; margin-top:11px; position:relative;
+    background:var(--violet-light); color:var(--violet-deep); font-size:10.5px; font-weight:600;
+    letter-spacing:.2px; padding:5px 11px; border-radius:999px}
+
+  /* 4 — conversion */
+  .convert{margin-top:30px}
+  .trust{display:flex; gap:18px; align-items:center; margin-bottom:16px; padding-left:1px}
+  .trust span{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--slate); font-weight:500}
+  .trust .ic{color:var(--violet); font-size:14px; display:inline-flex}
+  .cta{width:100%; background:var(--violet); color:#fff; border:none; border-radius:15px;
+    padding:16px; font-family:var(--inter); font-size:16px; font-weight:600; letter-spacing:.1px;
+    display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
+    box-shadow:0 8px 20px rgba(124,58,237,.28)}
+  .reassure{margin-top:11px; text-align:center; font-size:12.5px; color:var(--slate)}
+  .signin{margin-top:18px; text-align:center; font-size:13.5px; color:var(--slate)}
+  .signin a{color:var(--violet); font-weight:600; text-decoration:none}
+
+  /* annotations */
+  .notes{width:330px; max-width:100%; color:#e2e8f0; font-size:13.5px; line-height:1.55}
+  .notes h2{font-family:var(--sora); color:#fff; font-size:17px; font-weight:600; margin-bottom:14px}
+  .notes li{list-style:none; padding:11px 0 11px 26px; position:relative; border-bottom:1px solid #1e293b}
+  .notes li:before{content:''; position:absolute; left:2px; top:16px; width:9px; height:9px;
+    border-radius:50%; background:var(--violet)}
+  .notes li b{color:#fff; font-weight:600}
+  .notes .tag{display:inline-block; margin-top:2px; font-size:11px; color:#a5b4fc; font-weight:600}
+</style>
+</head>
+<body>
+  <p class="lead">Welcome screen, <b>crafted to the real Cigu brand</b> (ink + violet, Sora + Inter, the actual wordmark with the violet spark). One accent colour, one alignment, a deliberate type scale, and an 8-pt vertical rhythm. Compare the detail against the current build.</p>
+
+  <div class="stage">
+    <div class="phone">
+      <div class="notch"><div class="t">9:41</div><div class="r"><span>5G</span><span>100%</span></div></div>
+      <div class="screen">
+
+        <div class="brand">
+          <svg viewBox="0 -168.1 372.1 222.1" role="img" aria-label="cigu"><path fill="#0F172A" d="M56.300000000000004 -18.8Q61.900000000000006 -18.8 66.30000000000001 -21.0Q70.7 -23.200000000000003 73.35 -27.200000000000003Q76.0 -31.200000000000003 76.2 -36.5H101.10000000000001Q100.9 -25.5 94.9 -16.8Q88.9 -8.1 78.95 -3.05Q69.0 2.0 56.7 2.0Q44.2 2.0 34.900000000000006 -2.2Q25.6 -6.4 19.450000000000003 -13.900000000000002Q13.3 -21.400000000000002 10.25 -31.300000000000004Q7.2 -41.2 7.2 -52.5V-55.7Q7.2 -67.0 10.25 -76.9Q13.3 -86.80000000000001 19.450000000000003 -94.30000000000001Q25.6 -101.80000000000001 34.900000000000006 -106.0Q44.2 -110.2 56.6 -110.2Q69.7 -110.2 79.65 -105.1Q89.60000000000001 -100.0 95.25 -90.7Q100.9 -81.4 101.10000000000001 -68.8H76.2Q76.0 -74.60000000000001 73.6 -79.20000000000002Q71.2 -83.80000000000001 66.80000000000001 -86.60000000000001Q62.400000000000006 -89.4 56.1 -89.4Q49.400000000000006 -89.4 44.95 -86.60000000000001Q40.5 -83.80000000000001 38.05 -78.95000000000002Q35.6 -74.10000000000001 34.650000000000006 -68.15Q33.7 -62.2 33.7 -55.7V-52.5Q33.7 -45.900000000000006 34.650000000000006 -39.900000000000006Q35.6 -33.9 38.05 -29.15Q40.5 -24.400000000000002 44.95 -21.6Q49.400000000000006 -18.8 56.300000000000004 -18.8Z M141.58 -108.2V0.0H115.08000000000001V-108.2Z M197.6957591240876 48.571532846715336Q175.02114598540146 48.571532846715336 162.99475547445255 40.54933211678833Q150.96836496350363 32.52713138686132 150.96836496350363 18.06229197080292Q150.96836496350363 8.043919708029199 157.23527737226277 1.2123138686131392Q163.50218978102188 -5.61929197080292 175.4041897810219 -8.387474452554745Q170.85899999999998 -10.36192700729927 167.52217518248173 -14.71164598540146Q164.18535036496348 -19.061364963503653 164.18535036496348 -24.14360583941606Q164.18535036496348 -30.367080291970808 167.74331386861314 -34.63387226277373Q171.30127737226277 -38.90066423357665 178.2118613138686 -42.94829197080293Q169.57165693430656 -46.65236496350366 164.44005474452553 -54.92137226277373Q159.30845255474452 -63.19037956204381 159.30845255474452 -74.39737226277373Q159.30845255474452 -86.3467591240876 164.47164598540144 -94.74015693430658Q169.63483941605838 -103.13355474452557 179.54066788321165 -107.55237956204381Q189.44649635036495 -111.97120437956205 203.57962773722628 -111.97120437956205Q206.5926423357664 -111.97120437956205 210.37964233576642 -111.60000729927009Q214.16664233576643 -111.22881021897813 217.38302554744524 -110.75889051094893Q220.59940875912406 -110.28897080291972 221.97362773722628 -109.8980291970803H260.14374452554745V-95.73330656934307L242.25125547445253 -91.76465693430657Q244.7627591240876 -88.06453284671534 246.1369781021898 -83.61016788321169Q247.51119708029196 -79.15580291970804 247.51119708029196 -74.04197080291972Q247.51119708029196 -56.65099270072994 235.45321532846714 -46.824142335766425Q223.39523357664234 -36.99729197080292 202.0908905109489 -36.99729197080292Q197.0007518248175 -37.24607299270073 192.3607883211679 -37.787072992700736Q189.47413868613137 -35.82051824817518 187.95775912408757 -33.53805109489051Q186.44137956204378 -31.255583941605845 186.44137956204378 -28.56243065693431Q186.44137956204378 -26.15359854014599 188.2914416058394 -24.62734671532847Q190.14150364963504 -23.10109489051095 193.84360218978102 -22.33698175182482Q197.545700729927 -21.572868613138688 202.97939416058395 -21.572868613138688H221.78408029197078Q239.8542700729927 -21.572868613138688 249.3573102189781 -13.868554744525548Q258.8603503649635 -6.164240875912409 258.8603503649635 8.750773722627738Q258.8603503649635 27.76870072992701 243.07460218978102 38.170116788321174Q227.28885401459854 48.571532846715336 197.6957591240876 48.571532846715336ZM198.78960583941605 30.536883211678834Q210.2137883211679 30.536883211678834 218.22414233576643 28.347215328467154Q226.23449635036496 26.157547445255474 230.42823357664233 22.12374087591241Q234.6219708029197 18.089934306569347 234.6219708029197 12.52987591240876Q234.6219708029197 7.814883211678833 232.08479927007298 5.1829379562043805Q229.54762773722626 2.5509927007299273 224.44761678832117 1.5163795620437959Q219.34760583941608 0.48176642335766434 211.60380291970802 0.48176642335766434H195.24743795620438Q189.2924890510949 0.48176642335766434 184.63870437956206 2.377240875912409Q179.9849197080292 4.272715328467154 177.3470510948905 7.7892153284671535Q174.7091824817518 11.305715328467153 174.7091824817518 16.11943065693431Q174.7091824817518 22.954985401459858 181.01360948905108 26.745934306569346Q187.31803649635037 30.536883211678834 198.78960583941605 30.536883211678834ZM203.48485401459854 -53.84332116788322Q212.78057664233577 -53.84332116788322 217.2033503649635 -59.24147445255475Q221.62612408759122 -64.63962773722628 221.62612408759122 -74.1920291970803Q221.62612408759122 -84.6842700729927 217.05526642335764 -89.93039051094891Q212.48440875912408 -95.17651094890512 203.43746715328467 -95.17651094890512Q194.43396350364964 -95.17651094890512 189.83743795620438 -89.88300364963504Q185.24091240875913 -84.58949635036498 185.24091240875913 -74.09725547445255Q185.24091240875913 -64.63962773722628 189.81177007299272 -59.24147445255475Q194.38262773722627 -53.84332116788322 203.48485401459854 -53.84332116788322Z M334.1195693430657 -25.700000000000003V-108.2H360.7195693430657V0.0H335.7195693430657ZM337.51956934306565 -48.1 345.7195693430657 -48.300000000000004Q345.7195693430657 -37.4 343.3195693430657 -28.2Q340.9195693430657 -19.0 335.8695693430657 -12.25Q330.81956934306567 -5.5 323.1195693430657 -1.75Q315.4195693430657 2.0 304.9195693430657 2.0Q296.9195693430657 2.0 290.31956934306567 -0.25Q283.71956934306564 -2.5 278.96956934306564 -7.3500000000000005Q274.21956934306564 -12.200000000000001 271.6195693430657 -19.85Q269.01956934306565 -27.5 269.01956934306565 -38.300000000000004V-108.2H295.4195693430657V-38.1Q295.4195693430657 -32.7 296.6695693430657 -29.1Q297.9195693430657 -25.5 300.1695693430657 -23.25Q302.4195693430657 -21.0 305.4695693430657 -20.05Q308.51956934306565 -19.1 312.01956934306565 -19.1Q321.6195693430657 -19.1 327.1695693430657 -22.950000000000003Q332.7195693430657 -26.8 335.1195693430657 -33.35Q337.51956934306565 -39.900000000000006 337.51956934306565 -48.1Z"/><path fill="#7C3AED" d="M128.3,-164.1 C131.9,-142.3 131.9,-142.3 150.9,-138.2 C131.9,-134.0 131.9,-134.0 128.3,-112.2 C124.7,-134.0 124.7,-134.0 105.7,-138.2 C124.7,-142.3 124.7,-142.3 128.3,-164.1 Z"/></svg>
+          <div class="byline">Oleh Learnest Lab &times; Sifututor</div>
+        </div>
+
+        <div class="hero">
+          <h1>Masa cikgu,<br><span class="pay">untuk murid.</span></h1>
+          <p>Cigu siapkan RPH, kuiz dan slaid dalam minit.</p>
+        </div>
+
+        <div class="proof">
+          <div class="eyebrow">Tengok contoh</div>
+          <div class="card">
+            <i class="flask">&#129514;</i>
+            <div class="siap"><span class="dot"></span>RPH siap</div>
+            <h3>Haiwan dan Habitat</h3>
+            <div class="meta">Sains &middot; Tahun 2 &middot; 60 min</div>
+            <span class="chip">&#128218; Selaras DSKP &amp; SKPMg2</span>
+          </div>
+        </div>
+
+        <div class="convert">
+          <div class="trust">
+            <span><span class="ic">&#128737;</span>Patuh PDPA</span>
+            <span><span class="ic">&#127468;&#127486;</span>Buatan Malaysia</span>
+          </div>
+          <button class="cta">&#10024;&nbsp; Cuba, jana RPH pertama</button>
+          <div class="reassure">Percuma. Jadi antara cigu pertama.</div>
+          <div class="signin">Sudah ada akaun? <a href="#">Log masuk</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="notes">
+      <h2>What changed, and why</h2>
+      <ul>
+        <li><b>Real brand lockup.</b> The actual cigu wordmark with the violet spark, not SF-font text. <span class="tag">brand presence</span></li>
+        <li><b>One accent: violet.</b> Ink text, violet for the payoff word, the chip, the spark, the CTA. No more monotone system-blue. <span class="tag">cohesion</span></li>
+        <li><b>Sora + Inter type scale.</b> Sora for the wordmark, hero and card title; Inter for body. Deliberate sizes, not defaults. <span class="tag">hierarchy</span></li>
+        <li><b>8-pt vertical rhythm.</b> Four grouped blocks (brand, hero, proof, convert) with consistent spacing, not arbitrary gaps. <span class="tag">rhythm</span></li>
+        <li><b>One alignment.</b> Everything flush-left; the trust row no longer floats centred and orphaned. <span class="tag">order</span></li>
+        <li><b>No competing banner.</b> "Percuma" is now a quiet line under the single focal CTA, not a blue pill fighting it. <span class="tag">focus</span></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
